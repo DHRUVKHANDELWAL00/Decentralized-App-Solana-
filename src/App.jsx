@@ -11,6 +11,7 @@ import { clusterApiUrl } from '@solana/web3.js';
 import Airdrop from './components/Airdrop';
 // Default styles that can be overridden by your app
 import '@solana/wallet-adapter-react-ui/styles.css';
+import ShowSolBalances from './components/ShowSolBalances';
 // import fs from "fs"
 // import express from "express";
 const App = () => {
@@ -50,6 +51,7 @@ const App = () => {
                     { /* Your app's components go here, nested within the context providers. */ }
                     <h1>hey there</h1>
                     <Airdrop/>
+                    <ShowSolBalances/>
                 </WalletModalProvider>
             </WalletProvider>
         </ConnectionProvider>
