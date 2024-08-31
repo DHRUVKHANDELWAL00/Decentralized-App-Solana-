@@ -11,9 +11,9 @@ const Airdrop = () => {
         alert('solana transferred airdrop')
     }
   return (
-    <div>
-        <input type="text" placeholder="Amount"></input>
-        <button onClick={sendAirdrop}>Send Airdrop</button>
+    <div className='flex flex-row gap-6 my-10'>
+        <input type="text" placeholder="Amount" className="input input-bordered input-primary w-full max-w-xs" ></input>
+        <button onClick={sendAirdrop} className="btn btn-outline btn-primary">Send Airdrop</button>
     </div>
 
   )

@@ -12,6 +12,7 @@ import Airdrop from './components/Airdrop';
 // Default styles that can be overridden by your app
 import '@solana/wallet-adapter-react-ui/styles.css';
 import ShowSolBalances from './components/ShowSolBalances';
+import SendToken from './components/SendToken';
 // import fs from "fs"
 // import express from "express";
 const App = () => {
@@ -43,18 +44,23 @@ const App = () => {
 
 
     return (
-        <ConnectionProvider endpoint={"https://solana-devnet.g.alchemy.com/v2/bRBok_WQTH1a5uRBwem7hn-TD7-rgGJK"}>
+       <main className='flex flex-col justify-center items-center p-10'>
+         <ConnectionProvider endpoint={"https://solana-devnet.g.alchemy.com/v2/bRBok_WQTH1a5uRBwem7hn-TD7-rgGJK"}>
             <WalletProvider wallets={[]} autoConnect>
                 <WalletModalProvider>
-                    <WalletMultiButton />
+                    <div className='flex flex-col gap-2 mb-10'>
+                        <WalletMultiButton />
                     <WalletDisconnectButton />
+                    </div>
                     { /* Your app's components go here, nested within the context providers. */ }
-                    <h1>hey there</h1>
+                    <h1 className='text-7xl'>Decentralized App</h1>
                     <Airdrop/>
                     <ShowSolBalances/>
+                    <SendToken/>
                 </WalletModalProvider>
             </WalletProvider>
         </ConnectionProvider>
+       </main>
     );
 };
 export default App;

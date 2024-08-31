@@ -15,11 +15,12 @@ const ShowSolBalances = () => {
         setAmount(balance/10**9)
     }
     // useEffect(()=>{
-       getBalance()
+      //  getBalance()
     // },[])
   return (
-    <div>ShowSolBalances
-        {amount || 0}
+    <div  className='flex flex-row gap-6 my-10'>
+      <button onClick={getBalance} className="btn btn-outline btn-primary">Show Balance</button>
+        <h1>{amount || 0}</h1>
     </div>
   )
 }
